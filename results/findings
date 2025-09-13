@@ -11,3 +11,6 @@ UNION ALL
 SELECT 'Total Nr. Products', COUNT(product_name) FROM dbo.[gold.dim_products]
 UNION ALL
 SELECT 'Total Nr. Customers', COUNT(customer_key) FROM dbo.[gold.dim_customers]
+
+
+
