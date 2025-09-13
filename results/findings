@@ -1,0 +1,13 @@
+--- Generate a report that shows all key metrics of the business 
+
+SELECT 'Total Sales' AS measure_name, SUM(sales_amount) AS measure_value FROM dbo.[gold.fact_sales]
+UNION ALL
+SELECT 'Total Quantity', SUM(quantity) FROM dbo.[gold.fact_sales]
+UNION ALL
+SELECT 'Average Price', AVG(price) FROM dbo.[gold.fact_sales]
+UNION ALL
+SELECT 'Total Nr. Orders', COUNT(DISTINCT order_number) FROM dbo.[gold.fact_sales]
+UNION ALL
+SELECT 'Total Nr. Products', COUNT(product_name) FROM dbo.[gold.dim_products]
+UNION ALL
+SELECT 'Total Nr. Customers', COUNT(customer_key) FROM dbo.[gold.dim_customers]
